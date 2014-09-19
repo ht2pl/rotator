@@ -1,0 +1,4 @@
+rotator
+=======
+
+jQuery Plugin Rotator 
