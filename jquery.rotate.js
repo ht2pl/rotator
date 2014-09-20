@@ -1,0 +1,117 @@
+/*
+ *    jQuery Rotate v0.1.BETA - 2014-09-16, 16:52:38
+ *
+ *    Copyright (c) 2014 Lukasz Lelek
+ *    http://ht2.pl/rotator/
+ *
+ *    Licensed MIT
+ */
+
+
+if (typeof Object.create !== "function") {
+    Object.create = function (obj) {
+        function F() {}
+        F.prototype = obj;
+        return new F();
+    };
+}
+(function ($, window, document) {
+
+    var Rotate = {
+
+        init : function (el,options) {
+
+             var base = this;
+             base.rotatelist = el;
+             base.options = $.extend({}, $.fn.rotateTerm.options, options);
+
+
+             base.item = new  Array;
+
+             for (var i = 0, length = base.rotatelist.length; i < length; i++)
+             {
+
+               base.item[i] = new Array;
+
+               base.item[i].rotateId =  $(base.rotatelist[i]).attr('id');
+
+               base.item[i].terms    =  $("#"+base.item[i].rotateId+" li");
+               base.item[i].animate  =  base.valid_anim($("#"+base.item[i].rotateId).attr('data-rotate-animate').split(','));
+               base.item[i].arena    =  $("span[data-rotate*=#"+base.item[i].rotateId+"]");
+               base.item[i].interval =  base.valid_interval($("#"+base.item[i].rotateId).attr('data-rotate-interval'));
+
+               console.log(base);
+
+               base.rotatePlay(i);
+
+             }
+
+
+        },
+        rotatePlay : function (i) {
+
+            var base = this;
+
+            setTimeout(function() {
+
+                  var item = base.item[i];
+
+                  var ct = item.arena.data("term") || 0;
+
+                  item.arena.data("term", ct === item.terms.length - 1 ? 0 : ct + 1).html(item.terms.eq([ct]).html());
+
+
+                    base.anim(item.arena,item.animate[0]);
+
+                    setTimeout(function() {
+
+                        base.anim(item.arena,item.animate[1]);
+
+                         base.rotatePlay(i);
+
+                    },  item.interval);
+
+            }, 1000);
+
+        },
+        valid_anim: function(x) {
+
+            var base = this;
+            if (x) {
+                return x;
+            } else {
+                return $("#"+base.options.interval).attr('data-rotate-animate').split(',');
+            }
+
+        },
+        valid_interval: function(x) {
+
+            var base = this;
+            if ( isNaN(x) ) {
+                return base.options.interval;
+
+            } else {
+                return x;
+            }
+
+        },
+        anim: function(arena,x) {
+                var base = this;
+                arena.removeClass().addClass(x + ' '+base.options.animateClass).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend');
+        }
+
+    };
+
+    $.fn.rotateTerm = function (options) {
+            var rotateTerm = Object.create(Rotate);
+            rotateTerm.init(this,options);
+            $.data(this, "rotateTerm", Rotate);
+    };
+
+    $.fn.rotateTerm.options = {
+        animateClass : "animated",
+        interval     : "5000",
+        animate      : "fadeIn,fadeOut"
+    };
+
+} (jQuery, window, document));
