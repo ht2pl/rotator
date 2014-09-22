@@ -8,7 +8,8 @@ Rotator is a lightweight and customizable jQuery plugin for rotating text and so
 
 
 
-<h2>Dependencies:</h2>
+<b>Dependencies:</b>
 
+<a href="http://jquery.com">jQuqry</a>
 <a href="https://github.com/daneden/animate.css">Animate.css</a>
 

@@ -7,6 +7,10 @@
  *    Licensed MIT 
  */
 
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 .rotate {
     display:none
@@ -16,6 +20,6 @@
     display: inline-block;
 }
 
-.rotate-arena span {
+.rotate-arena > span {
     display: inline-block; 
 }
