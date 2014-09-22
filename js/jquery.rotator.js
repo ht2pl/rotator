@@ -23,7 +23,7 @@ if (typeof Object.create !== "function") {
 
              var base = this;
              base.rotatelist = el;
-             base.options = $.extend({}, $.fn.rotateTerm.options, options);
+             base.options = $.extend({}, $.fn.rotator.options, options);
 
 
              base.item = new  Array;
@@ -102,13 +102,13 @@ if (typeof Object.create !== "function") {
 
     };
 
-    $.fn.rotateTerm = function (options) {
-            var rotateTerm = Object.create(Rotate);
-            rotateTerm.init(this,options);
-            $.data(this, "rotateTerm", Rotate);
+    $.fn.rotator = function (options) {
+            var rotator = Object.create(Rotate);
+            rotator.init(this,options);
+            $.data(this, "rotator", Rotate);
     };
 
-    $.fn.rotateTerm.options = {
+    $.fn.rotator.options = {
         animateClass : "animated",
         interval     : "5000",
         animate      : "fadeIn,fadeOut"
