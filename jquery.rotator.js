@@ -1,8 +1,8 @@
 /* 
- *    jQuery Text-Rotator v0.1.BETA - 2014-09-16
+ *    jQuery Rotator v0.1.BETA - 2014-09-16
  * 
  *    Copyright (c) 2014 Lukasz Lelek
- *    http://ht2.pl/scripts/text-rotator/
+ *    http://ht2.pl/scripts/rotator/
  *    
  *    Licensed MIT 
  */
