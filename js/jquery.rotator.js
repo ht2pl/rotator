@@ -7,7 +7,6 @@
  *    Licensed MIT 
  */
 
-
 if (typeof Object.create !== "function") {
     Object.create = function (obj) {
         function F() {}
@@ -23,8 +22,7 @@ if (typeof Object.create !== "function") {
 
              var base = this;
              base.rotatelist = el;
-             base.options = $.extend({}, $.fn.rotateTerm.options, options);
-
+             base.options = $.extend({}, $.fn.rotator.options, options);
 
              base.item = new  Array;
 
@@ -32,16 +30,13 @@ if (typeof Object.create !== "function") {
              {
 
                base.item[i] = new Array;
-
                base.item[i].rotateId =  $(base.rotatelist[i]).attr('id');
-
                base.item[i].terms    =  $("#"+base.item[i].rotateId+" li");
                base.item[i].animate  =  base.valid_anim($("#"+base.item[i].rotateId).attr('data-rotate-animate').split(','));
                base.item[i].arena    =  $("span[data-rotate*=#"+base.item[i].rotateId+"]");
                base.item[i].interval =  base.valid_interval($("#"+base.item[i].rotateId).attr('data-rotate-interval'));
 
-               console.log(base);
-
+               // console.log(base);
                base.rotatePlay(i);
 
              }
@@ -66,8 +61,7 @@ if (typeof Object.create !== "function") {
                     setTimeout(function() {
 
                         base.anim(item.arena,item.animate[1]);
-
-                         base.rotatePlay(i);
+                        base.rotatePlay(i);
 
                     },  item.interval);
 
@@ -102,13 +96,13 @@ if (typeof Object.create !== "function") {
 
     };
 
-    $.fn.rotateTerm = function (options) {
-            var rotateTerm = Object.create(Rotate);
-            rotateTerm.init(this,options);
-            $.data(this, "rotateTerm", Rotate);
+    $.fn.rotator = function (options) {
+            var rotator = Object.create(Rotate);
+            rotator.init(this,options);
+            $.data(this, "rotator", Rotate);
     };
 
-    $.fn.rotateTerm.options = {
+    $.fn.rotator.options = {
         animateClass : "animated",
         interval     : "5000",
         animate      : "fadeIn,fadeOut"
