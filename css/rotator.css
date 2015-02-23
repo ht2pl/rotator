@@ -1,9 +1,5 @@
 /* 
-<<<<<<< HEAD
  *    jQuery Rotator v0.2.BETA - 2014-09-16
-=======
- *    jQuery Rotator v0.1.1-BETA - 2014/10/10
->>>>>>> master
  * 
  *    Copyright (c) 2014 Lukasz Lelek
  *    http://ht2.pl/scripts/rotator/
@@ -11,29 +7,11 @@
  *    Licensed MIT 
  */
 
-<<<<<<< HEAD
 body {
-=======
-html {
->>>>>>> master
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-<<<<<<< HEAD
 .rotate-arena {
     display: inline-block;
 }
-=======
-.rotate {
-    display:none
-}
-
-.rotate-arena {
-    display: inline-block;
-}
-
-.rotate-arena > span {
-    display: inline-block; 
-}
->>>>>>> master
