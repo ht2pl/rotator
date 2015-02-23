@@ -1,5 +1,9 @@
 /* 
+<<<<<<< HEAD:js/jquery.rotator.js
  *    jQuery Rotator v0.2.BETA - 2014-09-16
+=======
+ *    jQuery Rotator v0.1.1-BETA - 2014/10/10
+>>>>>>> master:js/jquery.rotator.js
  * 
  *    Copyright (c) 2014 Lukasz Lelek
  *    http://ht2.pl/scripts/rotator/
@@ -14,6 +18,7 @@ if (typeof Object.create !== "function") {
         return new F();
     };
 }
+
 (function ($, window, document) {
 
     var Rotate = {
@@ -23,12 +28,19 @@ if (typeof Object.create !== "function") {
              var base = this;
              base.rotatelist = el;
              base.options = $.extend({}, $.fn.rotator.options, options);
+<<<<<<< HEAD:js/jquery.rotator.js
 
              base.item = new  Array;
 
              for (var i = 0, length = base.rotatelist.length; i < length; i++)
              {
                 
+=======
+             base.item = new  Array;
+
+             for (var i = 0, length = base.rotatelist.length; i < length; i++) {
+                 
+>>>>>>> master:js/jquery.rotator.js
                base.item[i] = new Array;
                base.item[i].rotateId =  $(base.rotatelist[i]).attr('id');
                base.item[i].terms    =  $("#"+base.item[i].rotateId+" ul li");
@@ -36,12 +48,13 @@ if (typeof Object.create !== "function") {
                base.item[i].arena    =  $("#"+base.item[i].rotateId+" .rotate-arena");
                base.item[i].interval =  base.valid_interval($("#"+base.item[i].rotateId).attr('data-rotate-interval'));
 
+<<<<<<< HEAD:js/jquery.rotator.js
                $("#"+base.item[i].rotateId+" ul").hide();
                
+=======
+>>>>>>> master:js/jquery.rotator.js
                base.rotatePlay(i);
-
              }
-
 
         },
         rotatePlay : function (i) {
@@ -50,24 +63,17 @@ if (typeof Object.create !== "function") {
 
             setTimeout(function() {
 
-                  var item = base.item[i];
-
-                  var ct = item.arena.data("term") || 0;
-
-                  item.arena.data("term", ct === item.terms.length - 1 ? 0 : ct + 1).html(item.terms.eq([ct]).html());
-
-
+                    var item = base.item[i];
+                    var ct = item.arena.data("term") || 0;
+                    item.arena.data("term", ct === item.terms.length - 1 ? 0 : ct + 1).html(item.terms.eq([ct]).html());
                     base.anim(item.arena,item.animate[0]);
 
                     setTimeout(function() {
-
                         base.anim(item.arena,item.animate[1]);
+                        base.rotatePlay(i);
+                    },item.interval);
 
-                         base.rotatePlay(i);
-
-                    },  item.interval);
-
-            }, 1000);
+            },1000);
 
         },
         valid_anim: function(x) {
@@ -85,7 +91,6 @@ if (typeof Object.create !== "function") {
             var base = this;
             if ( isNaN(x) ) {
                 return base.options.interval;
-
             } else {
                 return x;
             }

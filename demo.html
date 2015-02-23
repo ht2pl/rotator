@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo - jQuery Text Rotator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+   
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800' rel='stylesheet' type='text/css'>
+    
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/rotator.css" rel="stylesheet">
+        
+        <style>
+            
+            .container {
+                font-family: 'Open Sans', sans-serif;
+                margin: auto;
+                max-width:1000px; 
+                padding: 50px; 
+                text-align: center; 
+                border-bottom: 1px solid #eee;
+            }
+
+
+            .demo1 {
+                min-width: 170px;
+                text-align: left;
+                font-weight: bold;
+                color: #2a6496;
+            }
+            .demo2 {
+                width: 150px;
+                text-align: center;
+            }
+            .demo2 span {
+                width: 150px;
+                font-weight: bold;
+                color: #fff;
+                background: #2a6496;
+                text-transform: uppercase;
+            }
+            
+            
+        </style>    
+    </head>
+    <body>
+
+
+        <div class="container">
+
+            <h1>Welcome to <span class="rotate-arena demo1"><span data-rotate="#demo1">rotator</span></span></h1>
+
+            <ul id="demo1" class="rotate" data-rotate-interval="3000" data-rotate-animate="fadeInDown,fadeOutDown">
+                <li>the future</li>
+                <li>awesome</li>
+                <li>lightweight</li>
+                <li>rotator</li>
+            </ul>
+
+        </div>
+        
+
+        <div class="container">
+
+            <h2>Lorem ipsum <span class="rotate-arena demo2"><span data-rotate="#demo2">America</span></span> sit amet.</h2>
+
+            <ul id="demo2" class="rotate" data-rotate-interval="3000" data-rotate-animate="rotateInDownLeft,rollOut">
+                <li>Europe</li>
+                <li>Africa</li>
+                <li>Poland</li>
+                <li>America</li>
+            </ul>
+
+        </div>
+
+        
+        
+        
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.rotator.min.js"></script>
+    <script>
+    
+    $(document).ready(function() {
+ 
+         $(".rotate").rotator();
+ 
+    });    
+    </script>
+    
+    </body>
+</html>
