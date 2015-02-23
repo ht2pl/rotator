@@ -1,5 +1,9 @@
 /* 
+<<<<<<< HEAD:js/jquery.rotator.js
+ *    jQuery Rotator v0.2.BETA - 2014-09-16
+=======
  *    jQuery Rotator v0.1.1-BETA - 2014/10/10
+>>>>>>> master:js/jquery.rotator.js
  * 
  *    Copyright (c) 2014 Lukasz Lelek
  *    http://ht2.pl/scripts/rotator/
@@ -24,18 +28,31 @@ if (typeof Object.create !== "function") {
              var base = this;
              base.rotatelist = el;
              base.options = $.extend({}, $.fn.rotator.options, options);
+<<<<<<< HEAD:js/jquery.rotator.js
+
+             base.item = new  Array;
+
+             for (var i = 0, length = base.rotatelist.length; i < length; i++)
+             {
+                
+=======
              base.item = new  Array;
 
              for (var i = 0, length = base.rotatelist.length; i < length; i++) {
                  
+>>>>>>> master:js/jquery.rotator.js
                base.item[i] = new Array;
                base.item[i].rotateId =  $(base.rotatelist[i]).attr('id');
-
-               base.item[i].terms    =  $("#"+base.item[i].rotateId+" li");
+               base.item[i].terms    =  $("#"+base.item[i].rotateId+" ul li");
                base.item[i].animate  =  base.valid_anim($("#"+base.item[i].rotateId).attr('data-rotate-animate').split(','));
-               base.item[i].arena    =  $("span[data-rotate*=#"+base.item[i].rotateId+"]");
+               base.item[i].arena    =  $("#"+base.item[i].rotateId+" .rotate-arena");
                base.item[i].interval =  base.valid_interval($("#"+base.item[i].rotateId).attr('data-rotate-interval'));
 
+<<<<<<< HEAD:js/jquery.rotator.js
+               $("#"+base.item[i].rotateId+" ul").hide();
+               
+=======
+>>>>>>> master:js/jquery.rotator.js
                base.rotatePlay(i);
              }
 
@@ -80,8 +97,8 @@ if (typeof Object.create !== "function") {
 
         },
         anim: function(arena,x) {
-                var base = this;
-                arena.removeClass().addClass(x + ' '+base.options.animateClass).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend');
+                var base = this;              
+                arena.removeClass().addClass('rotate-arena ' + x + ' '+base.options.animateClass).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend');
         }
 
     };
@@ -95,7 +112,7 @@ if (typeof Object.create !== "function") {
     $.fn.rotator.options = {
         animateClass : "animated",
         interval     : "5000",
-        animate      : "fadeIn,fadeOut"
+        animate      : "fadeInUp,fadeOutDown"
     };
 
 } (jQuery, window, document));
