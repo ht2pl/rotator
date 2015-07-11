@@ -7,11 +7,21 @@
  *    Licensed MIT 
  */
 
+<<<<<<< Updated upstream
 body {
+=======
+.rotate { 
+>>>>>>> Stashed changes
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale; 
 }
+<<<<<<< Updated upstream
 
 .rotate-arena {
     display: inline-block;
 }
+=======
+.rotate .rotate-arena {
+    display: inline-block;
+}
+>>>>>>> Stashed changes

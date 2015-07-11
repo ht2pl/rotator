@@ -1,5 +1,9 @@
 /* 
+<<<<<<< Updated upstream
  *    jQuery Rotator v0.2.BETA - 2014-09-16
+=======
+ *    jQuery Rotator v0.2.1.BETA - 2014-09-16
+>>>>>>> Stashed changes
  * 
  *    Copyright (c) 2014 Lukasz Lelek
  *    http://ht2.pl/scripts/rotator/
@@ -23,7 +27,12 @@ if (typeof Object.create !== "function") {
              var base = this;
              base.rotatelist = el;
              base.options = $.extend({}, $.fn.rotator.options, options);
+<<<<<<< Updated upstream
 
+=======
+             
+           
+>>>>>>> Stashed changes
              base.item = new  Array;
 
              for (var i = 0, length = base.rotatelist.length; i < length; i++)
@@ -38,6 +47,10 @@ if (typeof Object.create !== "function") {
 
                $("#"+base.item[i].rotateId+" ul").hide();
                
+<<<<<<< Updated upstream
+=======
+               
+>>>>>>> Stashed changes
                base.rotatePlay(i);
 
              }
@@ -47,7 +60,23 @@ if (typeof Object.create !== "function") {
         rotatePlay : function (i) {
 
             var base = this;
+            var item = base.item[i];
+            
+          
+            window = setInterval(function(){ 
+                base.rotatePlayAnimShow(item); 
+            },item.interval);
+            
+ 
+        },
+        rotatePlayAnimShow: function(item) {
+            
+             var base = this;
+             
+             var ct = item.arena.data("term") || 0;
+             item.arena.data("term", ct === item.terms.length - 1 ? 0 : ct + 1).html(item.terms.eq([ct]).html());
 
+<<<<<<< Updated upstream
             setTimeout(function() {
 
                   var item = base.item[i];
@@ -69,6 +98,25 @@ if (typeof Object.create !== "function") {
 
             }, 1000);
 
+=======
+             base.anim(item.arena,item.animate[0],base.rotatePlayAnimHideTimeOut(item));
+             
+             
+        },
+        rotatePlayAnimHideTimeOut: function(item) {
+           
+            var base = this;
+            item.timeout = setTimeout(function(){base.rotatePlayAnimHide(item) }, item.interval - 1000); 
+             
+        },
+        rotatePlayAnimHide: function(item) {
+            
+             var base = this;
+            
+                 clearTimeout(item.timeout); 
+                 // hide anim
+                 base.anim(item.arena,item.animate[1]);       
+>>>>>>> Stashed changes
         },
         valid_anim: function(x) {
 

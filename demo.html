@@ -12,79 +12,113 @@
         
         <style>
             
-            .container {
+            section {
                 font-family: 'Open Sans', sans-serif;
                 margin: auto;
                 max-width:1000px; 
-                padding: 50px; 
+                padding: 20px; 
                 text-align: center; 
-                border-bottom: 1px solid #eee;
+            }
+            
+            hr {
+               border-top: 1px  #eee;
+                margin: 100px 0;
             }
 
 
             .demo1 {
-                min-width: 170px;
-                text-align: left;
-                font-weight: bold;
-                color: #2a6496;
+                //text-align: left;
+                font-weight: 300;
             }
             .demo2 {
-                width: 150px;
                 text-align: center;
+                font-weight: 300;
+                text-transform: uppercase;
             }
             .demo2 span {
                 width: 150px;
-                font-weight: bold;
+                font-weight: 600;
                 color: #fff;
-                background: #2a6496;
-                text-transform: uppercase;
+                background: #2a6496;         
             }
             
             
         </style>    
     </head>
     <body>
+        <section>
 
 
-        <div class="container">
+            <hr />
+            
+            <!-- start: DEMO 1  -->
+            <div id="rotate-demo1" class="rotate" data-rotate-interval="3000" data-rotate-animate="bounceIn,bounceOut">
 
-            <h1>Welcome to <span class="rotate-arena demo1"><span data-rotate="#demo1">rotator</span></span></h1>
+                <h1 class="demo1">Welcome to <strong><span class="rotate-arena"></span></strong></h1>
 
-            <ul id="demo1" class="rotate" data-rotate-interval="3000" data-rotate-animate="fadeInDown,fadeOutDown">
-                <li>the future</li>
-                <li>awesome</li>
-                <li>lightweight</li>
-                <li>rotator</li>
-            </ul>
+                <ul>
+                    <li>jQuery Plugin</li>
+                    <li>Text Rotator</li>
+                    <li>HT2.PL</li>
+                </ul>
 
-        </div>
-        
+            </div>
+            <!-- end: DEMO 1  -->
 
-        <div class="container">
 
-            <h2>Lorem ipsum <span class="rotate-arena demo2"><span data-rotate="#demo2">America</span></span> sit amet.</h2>
+            <hr />
+            
+           
+            <!-- start: DEMO 2  -->
+            <div id="rotate-demo2" class="rotate" data-rotate-interval="4000" data-rotate-animate="rotateInDownLeft,rollOut">
 
-            <ul id="demo2" class="rotate" data-rotate-interval="3000" data-rotate-animate="rotateInDownLeft,rollOut">
-                <li>Europe</li>
-                <li>Africa</li>
-                <li>Poland</li>
-                <li>America</li>
-            </ul>
+                <h2 class="demo2">Lorem ipsum <span class="rotate-arena"></span> sit amet.</h2>
 
-        </div>
+                <ul>
+                    <li>Europe</li>
+                    <li>Africa</li>
+                    <li>Poland</li>
+                    <li>America</li>
+                </ul>
 
-        
-        
-        
+            </div>
+            <!-- end: DEMO 2  -->
+                   
+            
+            <hr />
+                      
+            
+            <!-- start: DEMO 3  -->
+            <div id="rotate-demo3" class="rotate" data-rotate-interval="5000" data-rotate-animate="zoomIn,zoomOut">
+
+                <h2 class="rotate-arena"></h2>
+
+                <ul>
+                    <li>Rotator words and some words of your text</li>
+                    <li>Awesome <strong class="text-danger">CSS3</strong> animations</li>
+                    <li>Rotator is <span class="text-danger">lightweight</span> and easy to setup </li>
+                </ul>
+
+            </div>
+            <!-- end: DEMO 3  -->
+            
+            
+            <hr />
+            
+
+        </secton>
+
+
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="js/jquery.rotator.min.js"></script>
+    <script src="js/jquery.rotator.js"></script>
     <script>
-    
-    $(document).ready(function() {
+        
+        jQuery(document).ready(function() {
  
-         $(".rotate").rotator();
+               jQuery(".rotate").rotator();
  
-    });    
+        });
+        
     </script>
     
     </body>
